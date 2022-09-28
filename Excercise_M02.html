@@ -6,11 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        text-align: center;
+    }
+    div{
+        background-color: rgb(185, 185, 185);
+        border-radius: 50px;
+    }
+    textarea{
+        width: 100px;
+        height: 50px;
+    }
+</style>
 <body>
-    <h1>Punny Web</h1>
-    <p id="title"></p>
-    <p id="data"></p> 
-    <h3 class="card-text" id="count">Jumlah Kalimat : </h3>
+    <div>
+        <h1>Punny Web</h1>
+        <p id="title"></p>
+        <p id="data"></p> 
+        <h3 class="card-text" id="count">Jumlah Kalimat : </h3>
+        <textarea id="textbox" onkeyup="charcountupdate(this.value)"> afeajfpaj </textarea>
+    </div>
+<span id="charcount"></span>
 </body>
     <script>
         let content = {
@@ -29,6 +46,9 @@
             title.innerHTML = title.innerHTML + title_content
             data.innerHTML = data.innerHTML + data_content
             count.innerHTML = count.innerHTML + count_sentences
-
+        function charcountupdate(str) {
+            var lng = str.length;
+            document.getElementById("charcount").innerHTML = lng;
+        }
     </script>
 </html>
